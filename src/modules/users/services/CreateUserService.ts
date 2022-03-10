@@ -8,12 +8,13 @@ import { UsersRepository } from '../repositories/UsersRepository';
 interface IRequest {
   name: string;
   email: string;
+  telefone: string;
   senha: string;
   ativo: number
 }
 
 class CreateUserService {
-  public async execute({ name, email, senha }: IRequest): Promise<Users> {
+  public async execute({ name, email,telefone, senha }: IRequest): Promise<Users> {
     const usersRepository = getCustomRepository(UsersRepository);
     const emailExists = await usersRepository.findByEmail(email);
 
@@ -25,6 +26,7 @@ class CreateUserService {
     const user = usersRepository.create({
       name, 
       email, 
+      telefone,
       senha: hashPassword, 
       ativo: 1
     })
