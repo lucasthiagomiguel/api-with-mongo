@@ -8,4 +8,5 @@ const starWarsController = StarWarsController;
 starWars.use(isAuthenticated);
 
 starWars.get('/',starWarsController.getPosts);
+starWars.get('/:id',starWarsController.getShow);
   export default starWars;
