@@ -13,6 +13,6 @@ export default class UsersController {
             ativo:1
         });
 
-        return response.json(user);
+        return response.json({status:"false",user});
     }
 }
