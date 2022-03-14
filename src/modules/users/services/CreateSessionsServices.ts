@@ -1,5 +1,5 @@
 import AppError from '@shared/errors/AppError';
-
+import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import authConfig from '@config/auth';
 import { getCustomRepository } from 'typeorm';
@@ -25,7 +25,7 @@ class CreateSessionService {
       throw new AppError('Email incorreto.', 401);
     }
 
-    const senhaConfirmada = await user.senha;
+    const senhaConfirmada = await compare(senha,user.senha);
 
     if(!senhaConfirmada){
         throw new AppError('dados incorreto.', 401);
