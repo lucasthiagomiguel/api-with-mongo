@@ -23,6 +23,6 @@ app.use((error: Error, request: Request, response: Response, next: NextFunction)
         message:  'Internal server error'
     })
 });
-app.listen(process.env.POT || 3333, () =>{
+app.listen(process.env.PORT || 3333, () =>{
     console.log("Server start");
 })
