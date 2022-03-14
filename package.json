@@ -22,8 +22,7 @@
     "@types/express": "^4.17.13",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/node": "^17.0.21",
-    "babel-plugin-module-resolver": "^4.1.0",
-    "babel-plugin-transform-typescript-metadata": "^0.3.2",
+    
     "bcryptjs": "^2.4.3",
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.13.0",
@@ -38,6 +37,8 @@
     "mysql2": "^2.3.3",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.45",
-    "bcryptjs": "^2.4.3"
+    "bcryptjs": "^2.4.3",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-plugin-transform-typescript-metadata": "^0.3.2"
   }
 }
