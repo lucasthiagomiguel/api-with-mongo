@@ -6,6 +6,7 @@
    "password": "",
    "database": "tizan-oxxo",
    "synchronize": true,
+   "useUnifiedTopology":true,
    "logging": false,
    "entities": [
       "src/modules/**/entities/*{.ts,.js}"
