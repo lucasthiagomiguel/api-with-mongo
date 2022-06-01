@@ -2,7 +2,6 @@ import "reflect-metadata";
 import 'express-async-errors';
 import  express, { NextFunction, Request, Response }  from "express";
 import  cors   from "cors";
-import  router  from "./routes";
 import routes from "./routes";
 import AppError from "@shared/errors/AppError";
 import '@shared/typeorm';
@@ -20,7 +19,7 @@ app.use((error: Error, request: Request, response: Response, next: NextFunction)
     }
     return response.status(500).json({
         status: 'error',
-        message:  'Internal server error'
+        message:  'Internal server error' + error.message
     })
 });
 app.listen(process.env.PORT || 3333, () =>{

@@ -8,9 +8,9 @@ export class CreateUsers1646699151806 implements MigrationInterface {
             columns: [
                 {
                     name: "id",
-                    type: "int",
+                    type: "varchar",
                     isPrimary: true,
-                    generationStrategy:"increment"
+                    
                 },
                 {
                     name: "name",
@@ -33,16 +33,7 @@ export class CreateUsers1646699151806 implements MigrationInterface {
                     name: "ativo",
                     type: "int",
                 },
-                {
-                  name: 'created_at',
-                  type: 'timestamp',
-                  default: 'now()'
-                },
-                {
-                    name: 'updated_at',
-                    type: 'timestamp',
-                    default: 'now()'
-                }
+                
             ]
         }), true);
     }

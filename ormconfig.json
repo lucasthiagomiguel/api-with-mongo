@@ -1,22 +1,22 @@
 {
-   "type": "mysql",
-   "host": "i54jns50s3z6gbjt.chr7pe7iynqr.eu-west-1.rds.amazonaws.com",
-   "port": 3306,
-   "username": "zrwwgkmo7oqbkh7f",
-   "password": "o7g94ypm89fy6cm8",
-   "database": "pcfdcbeib1dpe535",
+   "type": "mongodb",
+   "host": "localhost",
+   "port": 27017,
+   "username": "",
+   "password": "",
+   "database": "tizan-oxxo",
    "synchronize": true,
    "logging": false,
    "entities": [
-      "dist/modules/**/entities/*.js"
+      "src/modules/**/entities/*{.ts,.js}"
    ],
    "migrations": [
-      "dist/shared/migrations/**/*.js"
+      "src/shared/migrations/**/*{.ts,.js}"
    ],
    "subscribers": [
-      "dist/subscriber/**/*.js"
+      "src/subscriber/**/*{.ts,.js}"
    ],
    "cli":{
-       "migrationsDir": "./dist/shared/migrations"
+       "migrationsDir": "./src/shared/migrations"
    }
 }
