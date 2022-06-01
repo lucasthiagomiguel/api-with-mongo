@@ -9,13 +9,25 @@ export class Products{
     name:string;
 
     @Column()
-    telefone:string;
+    price:string;
 
     @Column()
-    email:string;
+    variety:string;
 
     @Column()
-    senha:string;
+    topSellers:string;
+
+    @Column()
+    image:string;
+
+    @Column()
+    category:boolean;
+
+    @Column()
+    more18:boolean;
+
+    @Column()
+    description:string;
 
     @Column()
     ativo:number;
