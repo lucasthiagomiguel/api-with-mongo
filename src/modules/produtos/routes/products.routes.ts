@@ -4,8 +4,12 @@ import Products from "../controllers/ProductsControllers";
 const productrRouter = Router();
 const Product = new Products();
 
+productrRouter.get(
+  '/',
+  Product.index,
+);
 productrRouter.post(
-    '/',
-    Product.create,
-  );
+  '/',
+  Product.create,
+);
   export default productrRouter;

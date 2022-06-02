@@ -1,7 +1,7 @@
 import {Entity, Column, CreateDateColumn, UpdateDateColumn, ObjectIdColumn} from "typeorm";
 
 @Entity('products')
-export class Products{
+export default class Products{
     @ObjectIdColumn()
     id: string;
 
