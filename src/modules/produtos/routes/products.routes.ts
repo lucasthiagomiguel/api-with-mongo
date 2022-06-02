@@ -8,6 +8,18 @@ productrRouter.get(
   '/',
   Product.index,
 );
+productrRouter.get(
+  '/:id',
+  Product.show,
+);
+productrRouter.put(
+  '/:id',
+  Product.update,
+);
+productrRouter.delete(
+  '/:id',
+  Product.delete,
+);
 productrRouter.post(
   '/',
   Product.create,

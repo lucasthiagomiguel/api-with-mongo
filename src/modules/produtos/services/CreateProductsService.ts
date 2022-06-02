@@ -1,6 +1,6 @@
 import { getCustomRepository } from 'typeorm';
-import { Products } from '../entities/Products';
-import { ProductsRepository } from '../repositories/ProductsRepository';
+import  Products  from '../entities/Products';
+import  ProductsRepository  from '../repositories/ProductsRepository';
 
 
 interface IRequest {
