@@ -9,15 +9,15 @@
    "useUnifiedTopology":true,
    "logging": false,
    "entities": [
-      "src/modules/**/entities/*{.ts,.js}"
+      "dist/modules/**/entities/*{.ts,.js}"
    ],
    "migrations": [
-      "src/shared/migrations/**/*{.ts,.js}"
+      "dist/shared/migrations/**/*{.ts,.js}"
    ],
    "subscribers": [
-      "src/subscriber/**/*{.ts,.js}"
+      "dist/subscriber/**/*{.ts,.js}"
    ],
    "cli":{
-       "migrationsDir": "./src/shared/migrations"
+       "migrationsDir": "./dist/shared/migrations"
    }
 }

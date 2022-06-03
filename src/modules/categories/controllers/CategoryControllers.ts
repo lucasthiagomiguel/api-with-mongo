@@ -7,11 +7,11 @@ import DeleteCategoryService from '../services/DeleteCategoryService';
 
 export default class CategoryController {
     public async index(request: Request, response: Response): Promise<Response> {
-        const listProducts = new ListCategoryService();
+        const listCategory = new ListCategoryService();
 
-        const products = await listProducts.execute();
+        const category = await listCategory.execute();
 
-        return response.json(products);
+        return response.json(category);
     }
     public async show(request: Request, response: Response): Promise<Response> {
         const { id } = request.params;
