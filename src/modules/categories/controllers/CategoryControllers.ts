@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
-import CreateUserService from "../services/CreateCategoryService";
-import ListProductService from '../services/ListCategoryService';
+import CreateCategoryService from "../services/CreateCategoryService";
+import ListCategoryService from '../services/ListCategoryService';
 import ShowCategoryService from '../services/ShowCategoryService';
 import UpdateCategoryService from '../services/UpdateCategoryService';
 import DeleteCategoryService from '../services/DeleteCategoryService';
 
-export default class UsersController {
+export default class CategoryController {
     public async index(request: Request, response: Response): Promise<Response> {
-        const listProducts = new ListProductService();
+        const listProducts = new ListCategoryService();
 
         const products = await listProducts.execute();
 
@@ -24,14 +24,14 @@ export default class UsersController {
       }
     public async create(request: Request, response: Response): Promise<Response>{
         const {name,description} = request.body;
-        const createUser = new CreateUserService();
-        const user = await createUser.execute({
+        const createCategory = new CreateCategoryService();
+        const Category = await createCategory.execute({
             name,
             description,
             ativo:1
         });
 
-        return response.json({status:"false",user});
+        return response.json({status:"false",Category});
     }
 
     public async update(request: Request, response: Response): Promise<Response> {
