@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import CreateUserService from "../services/CreateProductsService";
-import ListProductService from '../services/ListProductService';
-import ShowProductService from '../services/ShowProductService';
-import UpdateProductService from '../services/UpdateProductService';
-import DeleteProductService from '../services/DeleteProductService';
+import CreateUserService from "../services/CreateCategoryService";
+import ListProductService from '../services/ListCategoryService';
+import ShowCategoryService from '../services/ShowCategoryService';
+import UpdateCategoryService from '../services/UpdateCategoryService';
+import DeleteCategoryService from '../services/DeleteCategoryService';
 
 export default class UsersController {
     public async index(request: Request, response: Response): Promise<Response> {
@@ -16,23 +16,17 @@ export default class UsersController {
     public async show(request: Request, response: Response): Promise<Response> {
         const { id } = request.params;
     
-        const showProduct = new ShowProductService();
+        const showProduct = new ShowCategoryService();
     
         const product = await showProduct.execute({ id });
     
         return response.json(product);
       }
     public async create(request: Request, response: Response): Promise<Response>{
-        const {name,price,variety,topSellers,image,category,more18,description} = request.body;
+        const {name,description} = request.body;
         const createUser = new CreateUserService();
         const user = await createUser.execute({
             name,
-            price,
-            variety,
-            topSellers,
-            image,
-            category,
-            more18,
             description,
             ativo:1
         });
@@ -41,20 +35,14 @@ export default class UsersController {
     }
 
     public async update(request: Request, response: Response): Promise<Response> {
-        const {name,price,variety,topSellers,image,category,more18,description,ativo} = request.body;
+        const {name,description,ativo} = request.body;
         const { id } = request.params;
     
-        const updateProduct = new UpdateProductService();
+        const updateProduct = new UpdateCategoryService();
     
         const product = await updateProduct.execute({
             id,
             name,
-            price,
-            variety,
-            topSellers,
-            image,
-            category,
-            more18,
             description,
             ativo
         });
@@ -65,7 +53,7 @@ export default class UsersController {
     public async delete(request: Request, response: Response): Promise<Response> {
         const { id } = request.params;
     
-        const updateProduct = new DeleteProductService();
+        const updateProduct = new DeleteCategoryService();
     
         const product = await updateProduct.execute({
             id,
