@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import CreateUserService from "../services/CreateProductsService";
+import CreateProducService from "../services/CreateProductsService";
 import ListProductService from '../services/ListProductService';
 import ShowProductService from '../services/ShowProductService';
 import UpdateProductService from '../services/UpdateProductService';
@@ -24,8 +24,8 @@ export default class ProductsController {
       }
     public async create(request: Request, response: Response): Promise<Response>{
         const {name,price,variety,topSellers,image,category,more18,description} = request.body;
-        const createUser = new CreateUserService();
-        const user = await createUser.execute({
+        const createProduc = new CreateProducService();
+        const Produc = await createProduc.execute({
             name,
             price,
             variety,
@@ -37,7 +37,7 @@ export default class ProductsController {
             ativo:1
         });
 
-        return response.json({status:"false",user});
+        return response.json({status:"false",Produc});
     }
 
     public async update(request: Request, response: Response): Promise<Response> {
