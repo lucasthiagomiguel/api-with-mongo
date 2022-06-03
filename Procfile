@@ -1,1 +1,1 @@
-web: npm install  bcryptjs --location=global  
+web: npm run start  
